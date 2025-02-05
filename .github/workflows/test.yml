@@ -11,7 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -21,11 +20,8 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Check Mocha installation
-        run: npx mocha --version
+      - name: Run npm
+        run: npm install
 
       - name: Run tests
         run: npm test
